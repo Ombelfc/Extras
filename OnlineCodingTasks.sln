@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCodingTasks", "OnlineCodingTasks\OnlineCodingTasks.csproj", "{A9A147F6-B7BB-413A-9CDA-D508B59C3FD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank", "HackerRank\HackerRank.csproj", "{4F6D4AE6-EB73-4650-AFEC-1954ADD51F7D}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EulerProject", "EulerProject\EulerProject.fsproj", "{DECDF78C-EDDF-487D-84D5-50D874396989}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A9A147F6-B7BB-413A-9CDA-D508B59C3FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9A147F6-B7BB-413A-9CDA-D508B59C3FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9A147F6-B7BB-413A-9CDA-D508B59C3FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9A147F6-B7BB-413A-9CDA-D508B59C3FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F6D4AE6-EB73-4650-AFEC-1954ADD51F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F6D4AE6-EB73-4650-AFEC-1954ADD51F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F6D4AE6-EB73-4650-AFEC-1954ADD51F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F6D4AE6-EB73-4650-AFEC-1954ADD51F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECDF78C-EDDF-487D-84D5-50D874396989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECDF78C-EDDF-487D-84D5-50D874396989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECDF78C-EDDF-487D-84D5-50D874396989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECDF78C-EDDF-487D-84D5-50D874396989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
