@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HackerRank.Problem_Solving.Implementation
@@ -82,6 +83,79 @@ namespace HackerRank.Problem_Solving.Implementation
 
         public static int Birthday(List<int> s, int d, int m)
         {
+            int result = 0;
+
+            for (int i = 0; i < s.Count - m + 1; i++)
+            {
+                int sum = 0;
+                for (int j = i; j < i + m; j++)
+                {
+                    sum += s[j];
+                }
+
+                if (sum == d)
+                    result++;
+            }
+
+            return result;
+        }
+
+        public static int DivisibleSumPairs(int n, int k, int[] ar)
+        {
+            int result = 0;
+
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = i + 1; j < n; j++)
+                {
+                    int sum = ar[i] + ar[j];
+                    if (sum % k == 0)
+                        result++;
+                }
+            }
+
+            return result;
+        }
+
+        public static int MigratoryBirds(List<int> arr)
+        {
+            return arr.GroupBy(x => x).OrderByDescending(grp => grp.Count())
+                .ThenBy(grp => grp.Key).First().Key;
+        }
+
+        public static string DayOfProgrammer(int year)
+        {
+            var result = String.Empty;
+
+            // Julian calendar
+            if (year < 1918)
+            {
+                // Leap year
+                if (year % 4 == 0)
+                    result = $"12.09.{year}";
+                else
+                    result = $"13.09.{year}";
+            }
+            // Gregorian calendar
+            else if (year > 1918)
+            {
+                // Leap year
+                if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+                    result = $"12.09.{year}";
+                else
+                    result = $"13.09.{year}";
+            }
+            else if (year == 1918)
+            {
+                result = $"26.09.{year}";
+            }
+
+            return result;
+        }
+
+        public static void BonAppetit(List<int> bill, int k, int b)
+        {
+
 
         }
 
