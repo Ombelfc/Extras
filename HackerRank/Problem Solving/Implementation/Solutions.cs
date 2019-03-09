@@ -167,7 +167,50 @@ namespace HackerRank.Problem_Solving.Implementation
             }
         }
 
-        public static int sockMerchant(int n, int[] ar)
+        public static int SockMerchant(int n, int[] ar)
+        {
+            int count = 0;
+            HashSet<int> colors = new HashSet<int>();
+
+            for(int i = 0; i < n; i++)
+            {
+                if (!colors.Contains(ar[i]))
+                    colors.Add(ar[i]);
+                else
+                {
+                    count++;
+                    colors.Remove(ar[i]);
+                }
+            }
+
+            return count;
+
+            /*int count = 0;
+            List<int> indexes = new List<int>();
+
+            for(int i = 0; i < ar.Length - 1; i++)
+            {
+                if (indexes.Contains(i))
+                    continue;
+
+                int key = ar[i];
+
+                for(int j = i + 1; j < ar.Length; j++)
+                {
+                    if (!indexes.Contains(j) && ar[j] == key)
+                    {
+                        count++;
+                        indexes.Add(i);
+                        indexes.Add(j);
+                        break;
+                    }
+                }
+            }
+
+            return count;*/
+        }
+
+        public static int PageCount(int n, int p)
         {
             
         }
