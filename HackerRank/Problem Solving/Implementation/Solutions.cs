@@ -155,8 +155,21 @@ namespace HackerRank.Problem_Solving.Implementation
 
         public static void BonAppetit(List<int> bill, int k, int b)
         {
+            var removed = bill.Remove(bill[k]);
+            if(removed)
+            {
+                var sum = bill.Sum();
 
+                if ((sum / 2) == b)
+                    Console.WriteLine("Bon Appetit");
+                else
+                    Console.WriteLine($"{b - (sum / 2)}");
+            }
+        }
 
+        public static int sockMerchant(int n, int[] ar)
+        {
+            
         }
 
         #region Helpers
