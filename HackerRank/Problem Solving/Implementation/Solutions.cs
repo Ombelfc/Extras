@@ -254,51 +254,39 @@ namespace HackerRank.Problem_Solving.Implementation
             keyBoards.Sort();
             dvs.Sort();
 
-            if (keyBoards[0] + dvs[0] > budget)
-                return -1;
-
             int sum = 0;
+            List<int> Sums = new List<int>();
 
+            for (int i = 0; i < keyBoards.Count(); i++)
+                for (int j = 0; j < dvs.Count(); j++)
+                {
+                    if (keyBoards[i] + dvs[j] <= budget)
+                        Sums.Add(keyBoards[i] + dvs[j]);
+                    else
+                        break;
+                }
 
+            sum = Sums.Count() > 0 ?  Sums.Max() : -1;
 
             return sum;
+        }
 
-            /*Array.Sort<int>(keyboards, (a, b) => b.CompareTo(a));
-            Array.Sort<int>(drives, (a, b) => b.CompareTo(a));
+        public static string CatAndMouse(int x, int y, int z)
+        {
+            var a = Math.Abs(x - z);
+            var b = Math.Abs(y - z);
 
-            if (keyboards[keyboards.Length - 1] + drives[drives.Length - 1] > budget)
-                return -1;
+            if (a == b)
+                return "Mouse C";
+            else if (a < b)
+                return "Cat A";
+            else
+                return "Cat B";
+        }
 
-            for(int i = 0, j = 0; i < keyboards.Length - 1 && j < drives.Length - 1; )
-            {
-                var sum = keyboards[i] + drives[j];
-                if (sum > budget)
-                {
-                    var first = keyboards[i + 1] + drives[j];
-                    var second = keyboards[i] + drives[j + 1];
-                    
-                    if (first > budget && second > budget)
-                    {
-                        i++;
-                        j++;
-                    }
-                    else
-                    {
-                        if (first > second && first > budget)
-                            return second;
-                        else if (first > second && first < budget)
-                            return first;
-                        else if (first < second && second > budget)
-                            return first;
-                        else if (first < second && second < budget)
-                            return second;
-                    }
-                }
-                else
-                    return sum;
-            }
-
-            return -1;*/
+        public static int FormingMagicSquare(int[][] s)
+        {
+            
         }
 
         #region Helpers

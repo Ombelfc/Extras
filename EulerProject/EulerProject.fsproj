@@ -5,4 +5,11 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
+  <ItemGroup />
+
+  <ItemGroup>
+    <Compile Include="Helpers.fs" />
+    <None Include="Solutions.fsx" />
+  </ItemGroup>
+
 </Project>
