@@ -212,7 +212,93 @@ namespace HackerRank.Problem_Solving.Implementation
 
         public static int PageCount(int n, int p)
         {
-            
+            var firstPage = Math.Abs(p / 2);
+            if ((n % 2) == 0)
+                n++;
+
+            int secondPage = Math.Abs((p - n) / 2);
+            return firstPage < secondPage ? firstPage : secondPage;
+        }
+
+        public static int CountingValleys(int n, string s)
+        {
+            int vallies = 0;
+            int altitude = 0;
+            bool inVally = false;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == 'U')
+                    altitude++;
+                else if (s[i] == 'D')
+                    altitude--;
+
+                if (altitude == 0 && inVally)
+                    inVally = false;
+
+                if (altitude == -1 && !inVally)
+                {
+                    inVally = true;
+                    vallies++;
+                }   
+            }
+
+            return vallies;
+        }
+
+        public static int GetMoneySpent(int[] keyboards, int[] drives, int budget)
+        {
+            var keyBoards = keyboards.Where(k => k < budget).ToList();
+            var dvs = drives.Where(d => d < budget).ToList();
+
+            keyBoards.Sort();
+            dvs.Sort();
+
+            if (keyBoards[0] + dvs[0] > budget)
+                return -1;
+
+            int sum = 0;
+
+
+
+            return sum;
+
+            /*Array.Sort<int>(keyboards, (a, b) => b.CompareTo(a));
+            Array.Sort<int>(drives, (a, b) => b.CompareTo(a));
+
+            if (keyboards[keyboards.Length - 1] + drives[drives.Length - 1] > budget)
+                return -1;
+
+            for(int i = 0, j = 0; i < keyboards.Length - 1 && j < drives.Length - 1; )
+            {
+                var sum = keyboards[i] + drives[j];
+                if (sum > budget)
+                {
+                    var first = keyboards[i + 1] + drives[j];
+                    var second = keyboards[i] + drives[j + 1];
+                    
+                    if (first > budget && second > budget)
+                    {
+                        i++;
+                        j++;
+                    }
+                    else
+                    {
+                        if (first > second && first > budget)
+                            return second;
+                        else if (first > second && first < budget)
+                            return first;
+                        else if (first < second && second > budget)
+                            return first;
+                        else if (first < second && second < budget)
+                            return second;
+                    }
+                }
+                else
+                    return sum;
+            }
+
+            return -1;*/
         }
 
         #region Helpers
