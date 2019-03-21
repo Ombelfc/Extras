@@ -5,11 +5,12 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
-    <Compile Include="Helpers.fs" />
-    <None Include="Solutions.fsx" />
+	<None Include="HelpersTests.fsx" />
+	<Compile Include="Helpers.fs" />
+    <None Include="March\Problem1.fsx" />
+    <None Include="March\Problem2.fsx" />
+    <None Include="March\Problem3.fsx" />
   </ItemGroup>
 
 </Project>

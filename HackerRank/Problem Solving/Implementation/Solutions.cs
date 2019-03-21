@@ -286,7 +286,20 @@ namespace HackerRank.Problem_Solving.Implementation
 
         public static int FormingMagicSquare(int[][] s)
         {
-            
+            int cost = 0;
+            List<int> Sums = new List<int>();
+
+            // Rows sum
+            for(int i = 0; i < s.GetLength(0); i++)
+            {
+                Sums.Add(s[i][0] + s[i][1] + s[i][2]);
+            }
+
+            // Columns sum
+            for (int i = 0; i < s.GetLength(1); i++)
+            {
+                Sums.Add(s[0][i] + s[1][i] + s[2][i]);
+            }
         }
 
         #region Helpers
