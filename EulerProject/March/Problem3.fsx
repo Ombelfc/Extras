@@ -1,6 +1,11 @@
-﻿open System
+﻿// March
 
-// March
+open System
+
+#load @"C:\Users\berra\source\repos\Extras\EulerProject\Helpers.fs"
+
+open EulerProject.Helpers
+open Helpers
 
 // Problem 3:
 // The prime factors of 13195 are 5, 7, 13 and 29.
@@ -8,9 +13,7 @@
 
 
 let num = 600851475143L
-let maxToCheck = (int)(Math.Sqrt ((float) num)) + 1
+let maxToCheck = int64 (Math.Sqrt ((double) num) + (double) 1)
 
-let seq = Seq.init maxToCheck (fun x -> )
-printfn "%A" seq 
-
+[2L..maxToCheck] |> Seq.filter (fun x -> num % x = 0L && isPrime x) |> Seq.max
 
