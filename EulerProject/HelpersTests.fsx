@@ -5,4 +5,8 @@ open EulerProject.Helpers
 open Helpers
 
 // Fibonacci sequence
-[1..11] |> List.map (fun x -> fibonacci x) |> printfn "%A";
+[1 .. 11] |> List.map (fun x -> fibonacci x) |> printfn "%A";
+
+// Is prime
+let num = 600851475143L
+printfn "%b" (isPrime num)

@@ -12,4 +12,4 @@ open Helpers
 
 // Each sequence element is computed when needed (think IEnumerable)
 let fibonacciSeq = Seq.initInfinite (fun x -> fibonacci x)
-fibonacciSeq |> Seq.takeWhile (fun x -> x < 4000000) |> Seq.filter (fun x -> x % 2 = 0) |> Seq.sum |> printfn "%i";
+fibonacciSeq |> Seq.takeWhile (fun x -> x < 4000000) |> Seq.filter (fun x -> x % 2 = 0) |> Seq.sum |> printfn "%i"

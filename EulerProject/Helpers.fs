@@ -11,4 +11,4 @@ module Helpers =
 
     let isPrime (n : int64) =
         let maxToCheck = int64 (Math.Sqrt ((double) n) + (double) 1)
-        [2L..maxToCheck] |> Seq.filter (fun x -> n % x = 0L) |> Seq.length = 0
+        [2L .. maxToCheck] |> Seq.filter (fun x -> n % x = 0L) |> Seq.length = 0
