@@ -14,4 +14,5 @@ open Helpers
 let num = 600851475143L
 let maxToCheck = int64 (Math.Sqrt ((double) num) + (double) 1)
 
-[2L .. maxToCheck] |> Seq.filter (fun x -> num % x = 0L && isPrime x) |> Seq.max
+[2L .. maxToCheck] |> Seq.filter (fun x -> num % x = 0L && isPrime x) 
+                   |> Seq.max

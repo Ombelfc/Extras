@@ -10,3 +10,7 @@ open Helpers
 // Is prime
 let num = 600851475143L
 printfn "%b" (isPrime num)
+
+// Is palindromic
+let pnum = 906609
+printfn "%b" (isPalindromic pnum)

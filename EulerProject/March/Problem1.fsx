@@ -7,4 +7,6 @@
 let range = [0 .. 999]
 let condition x = x % 3 = 0 || x % 5 = 0
 
-range |> List.filter condition |> List.sum |> printfn "%i";
+range |> List.filter condition 
+      |> List.sum 
+      |> printfn "%i";

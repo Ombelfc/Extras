@@ -6,12 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-	<None Include="HelpersTests.fsx" />
 	<Compile Include="Helpers.fs" />
-	<None Include="March\Problem4.fsx" />
+	<None Include="HelpersTests.fsx" />
     <None Include="March\Problem1.fsx" />
     <None Include="March\Problem2.fsx" />
     <None Include="March\Problem3.fsx" />
+    <None Include="April\Problem4.fsx" />
+    <None Include="April\Problem5.fsx" />
   </ItemGroup>
 
 </Project>
