@@ -13,6 +13,7 @@
     <None Include="March\Problem3.fsx" />
     <None Include="April\Problem4.fsx" />
     <None Include="April\Problem5.fsx" />
+    <None Include="May\Problem6.fsx" />
   </ItemGroup>
 
 </Project>
