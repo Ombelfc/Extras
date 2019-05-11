@@ -287,19 +287,59 @@ namespace HackerRank.Problem_Solving.Implementation
         public static int FormingMagicSquare(int[][] s)
         {
             int cost = 0;
-            List<int> Sums = new List<int>();
-
-            // Rows sum
-            for(int i = 0; i < s.GetLength(0); i++)
+            
+            if (s[1][1] != 5)
             {
-                Sums.Add(s[i][0] + s[i][1] + s[i][2]);
+                cost += Math.Abs(s[1][1] - 5);
+                s[1][1] = 5;
             }
 
-            // Columns sum
-            for (int i = 0; i < s.GetLength(1); i++)
+            for (int i = 0; i < 3; i++)
             {
-                Sums.Add(s[0][i] + s[1][i] + s[2][i]);
+                for(int j = 0; j < 3; j++)
+                {
+                    if ((i == 0 || i == 2) && (j == 0 || j == 2))
+                    {
+                        // Should be even
+                        if (s[i][j] % 2 != 0)
+                        {
+                            if (s[i][j] == 9)
+                            {
+                                s[i][j] = 9 - 1;
+                                cost += Math.Abs(9 - 8);
+                            }
+                            else if (s[i][j] == 1)
+                            {
+                                s[i][j] = 1 + 1;
+                                cost += Math.Abs(2 - 1);
+                            }
+                            else
+                            {
+                                var value = s[i][j] + 1;
+                                cost += Math.Abs(value - s[i][j]);
+                                s[i][j] = value;
+                            }
+                        }
+                    }
+                    else if (i == 1 && j == 1) continue;
+                    else
+                    {
+                        // Should be odd
+                        if (s[i][j] % 2 == 0)
+                        {
+                            var value = s[i][j] - 1;
+                            cost += Math.Abs(value - s[i][j]);
+                            s[i][j] = value;
+                        }
+                    }
+                }
             }
+
+            // Check for duplicates
+
+            //PrintMatrix(s);
+
+            return cost;
         }
 
         #region Helpers
@@ -310,6 +350,18 @@ namespace HackerRank.Problem_Solving.Implementation
             else if ((grade + 1) % 5 == 0) return grade + 1;
             else if ((grade + 2) % 5 == 0) return grade + 2;
             else return grade;
+        }
+
+        private static void PrintMatrix(int[][] s)
+        {
+            for (int i = 0; i < s.GetLength(0); i++)
+            {
+                for (int j = 0; j < s.GetLength(1); j++)
+                {
+                    Console.Write(string.Format("{0} ", s[i, j]));
+                }
+                Console.Write(Environment.NewLine + Environment.NewLine);
+            }
         }
 
         #endregion
