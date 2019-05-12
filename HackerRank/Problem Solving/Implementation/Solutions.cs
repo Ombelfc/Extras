@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace HackerRank.Problem_Solving.Implementation
 {
@@ -286,60 +285,31 @@ namespace HackerRank.Problem_Solving.Implementation
 
         public static int FormingMagicSquare(int[][] s)
         {
-            int cost = 0;
-            
-            if (s[1][1] != 5)
+            int[][][] possiblePermutations = new int[][][] 
             {
-                cost += Math.Abs(s[1][1] - 5);
-                s[1][1] = 5;
-            }
+                new int[][] { new int[] { 8, 1, 6 }, new int[] { 3, 5, 7 }, new int[] { 4, 9, 2 } }, // 1
+                new int[][] { new int[] { 6, 1, 8 }, new int[] { 7, 5, 3 }, new int[] { 2, 9, 4 } }, // 2
+                new int[][] { new int[] { 4, 9, 2 }, new int[] { 3, 5, 7 }, new int[] { 8, 1, 6 } }, // 3
+                new int[][] { new int[] { 2, 9, 4 }, new int[] { 7, 5, 3 }, new int[] { 6, 1, 8 } }, // 4
+                new int[][] { new int[] { 8, 3, 4 }, new int[] { 1, 5, 9 }, new int[] { 6, 7, 2 } }, // 5
+                new int[][] { new int[] { 4, 3, 8 }, new int[] { 9, 5, 1 }, new int[] { 2, 7, 6 } }, // 6
+                new int[][] { new int[] { 6, 7, 2 }, new int[] { 1, 5, 9 }, new int[] { 8, 3, 4 } }, // 7
+                new int[][] { new int[] { 2, 7, 6 }, new int[] { 9, 5, 1 }, new int[] { 4, 3, 8 } }, // 8
+            };
 
-            for (int i = 0; i < 3; i++)
+            int minCost = int.MaxValue;
+            for (int permutation = 0; permutation < 8; permutation++)
             {
-                for(int j = 0; j < 3; j++)
+                int permutationCost = 0;
+                for (int i = 0; i < 3; i++)
                 {
-                    if ((i == 0 || i == 2) && (j == 0 || j == 2))
-                    {
-                        // Should be even
-                        if (s[i][j] % 2 != 0)
-                        {
-                            if (s[i][j] == 9)
-                            {
-                                s[i][j] = 9 - 1;
-                                cost += Math.Abs(9 - 8);
-                            }
-                            else if (s[i][j] == 1)
-                            {
-                                s[i][j] = 1 + 1;
-                                cost += Math.Abs(2 - 1);
-                            }
-                            else
-                            {
-                                var value = s[i][j] + 1;
-                                cost += Math.Abs(value - s[i][j]);
-                                s[i][j] = value;
-                            }
-                        }
-                    }
-                    else if (i == 1 && j == 1) continue;
-                    else
-                    {
-                        // Should be odd
-                        if (s[i][j] % 2 == 0)
-                        {
-                            var value = s[i][j] - 1;
-                            cost += Math.Abs(value - s[i][j]);
-                            s[i][j] = value;
-                        }
-                    }
+                    for (int j = 0; j < 3; j++)
+                        permutationCost += Math.Abs(s[i][j] - possiblePermutations[permutation] [i] [j]);
                 }
+                minCost = Math.Min(minCost, permutationCost);
             }
 
-            // Check for duplicates
-
-            //PrintMatrix(s);
-
-            return cost;
+            return minCost;
         }
 
         #region Helpers
@@ -358,7 +328,7 @@ namespace HackerRank.Problem_Solving.Implementation
             {
                 for (int j = 0; j < s.GetLength(1); j++)
                 {
-                    Console.Write(string.Format("{0} ", s[i, j]));
+                    Console.Write(string.Format("{0} ", s[i][j]));
                 }
                 Console.Write(Environment.NewLine + Environment.NewLine);
             }
