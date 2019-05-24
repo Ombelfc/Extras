@@ -7,13 +7,13 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            SortingAlgorithms algorithms = new SortingAlgorithms();
+            SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
-            var sortedArrInc = algorithms.InsertionSort.SortIncreasing(new int[] { 5, 2, 4, 6, 1, 3 });
-            Console.WriteLine("[{0}]", String.Join(", ", sortedArrInc));
+            var sortedArrInc = sortingAlgorithms.InsertionSort.SortIncreasing(new int[] { 5, 2, 4, 6, 1, 3 });
+            Console.WriteLine("[{0}]", string.Join(", ", sortedArrInc));
 
-            var sortedArrDec = algorithms.InsertionSort.SortDecreasing(new int[] { 5, 2, 4, 6, 1, 3 });
-            Console.WriteLine("[{0}]", String.Join(", ", sortedArrDec));
+            var sortedArrDec = sortingAlgorithms.InsertionSort.SortDecreasing(new int[] { 5, 2, 4, 6, 1, 3 });
+            Console.WriteLine("[{0}]", string.Join(", ", sortedArrDec));
 
             Console.ReadKey();
         }

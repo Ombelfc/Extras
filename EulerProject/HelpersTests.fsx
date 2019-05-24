@@ -14,3 +14,6 @@ printfn "%b" (isPrimeLarge num)
 // Is palindromic
 let pnum = 906609
 printfn "%b" (isPalindromic pnum)
+
+let numberArray = [|5I; 3I; 2I; 5I; 9I; 8I|]
+printfn "Product: %A" (MultipleArray numberArray)

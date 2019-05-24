@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorithms.Sorting_Algorithms
+﻿namespace Algorithms.Sorting_Algorithms
 {
     public class InsertionSort
     {

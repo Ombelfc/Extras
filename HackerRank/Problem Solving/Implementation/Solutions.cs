@@ -99,7 +99,7 @@ namespace HackerRank.Problem_Solving.Implementation
             return result;
         }
 
-        public static int DivisibleSumPairs(int n, int k, int[] ar)
+        public static int DivisibleSumPairs(int n, int k, int[] arr)
         {
             int result = 0;
 
@@ -107,7 +107,7 @@ namespace HackerRank.Problem_Solving.Implementation
             {
                 for (int j = i + 1; j < n; j++)
                 {
-                    int sum = ar[i] + ar[j];
+                    int sum = arr[i] + arr[j];
                     if (sum % k == 0)
                         result++;
                 }
@@ -116,9 +116,9 @@ namespace HackerRank.Problem_Solving.Implementation
             return result;
         }
 
-        public static int MigratoryBirds(List<int> arr)
+        public static int MigratoryBirds(List<int> sequence)
         {
-            return arr.GroupBy(x => x).OrderByDescending(grp => grp.Count())
+            return sequence.GroupBy(x => x).OrderByDescending(grp => grp.Count())
                 .ThenBy(grp => grp.Key).First().Key;
         }
 
@@ -166,19 +166,19 @@ namespace HackerRank.Problem_Solving.Implementation
             }
         }
 
-        public static int SockMerchant(int n, int[] ar)
+        public static int SockMerchant(int n, int[] arr)
         {
             int count = 0;
             HashSet<int> colors = new HashSet<int>();
 
             for(int i = 0; i < n; i++)
             {
-                if (!colors.Contains(ar[i]))
-                    colors.Add(ar[i]);
+                if (!colors.Contains(arr[i]))
+                    colors.Add(arr[i]);
                 else
                 {
                     count++;
-                    colors.Remove(ar[i]);
+                    colors.Remove(arr[i]);
                 }
             }
 
@@ -310,6 +310,11 @@ namespace HackerRank.Problem_Solving.Implementation
             }
 
             return minCost;
+        }
+
+        public static int PickingNumbers(List<int> sequence)
+        {
+
         }
 
         #region Helpers
