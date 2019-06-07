@@ -314,7 +314,24 @@ namespace HackerRank.Problem_Solving.Implementation
 
         public static int PickingNumbers(List<int> sequence)
         {
+            sequence.Sort();
+            int max = 1;
 
+            for (int i = 0; i < sequence.Count - 1; i++)
+            {
+                int currentMax = 1;
+
+                for (int j = i + 1; j < sequence.Count; j++)
+                {
+                    if (Math.Abs(sequence[i] - sequence[j]) <= 1)
+                        currentMax++;
+                }
+
+                if (currentMax > max)
+                    max = currentMax;
+            }
+
+            return max;
         }
 
         #region Helpers
