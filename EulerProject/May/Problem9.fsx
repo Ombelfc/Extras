@@ -1,6 +1,4 @@
-﻿open System.Web.ModelBinding
-
-// May
+﻿// May
 
 // Problem 9:
 // A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,

@@ -15,5 +15,9 @@ printfn "%b" (isPrimeLarge num)
 let pnum = 906609
 printfn "%b" (isPalindromic pnum)
 
+// Multiplies the values of the array
 let numberArray = [|5I; 3I; 2I; 5I; 9I; 8I|]
-printfn "Product: %A" (MultipleArray numberArray)
+printfn "Product: %A" (multiplyArray numberArray)
+
+let integer = 10000L
+printfn "Factors count: %A" (findFactorsCount integer)
