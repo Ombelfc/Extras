@@ -1,6 +1,8 @@
-﻿namespace Algorithms.Sorting_Algorithms
+﻿using Algorithms.Utilities;
+
+namespace Algorithms.Sorting_Algorithms
 {
-    public class InsertionSort
+    public class InsertionSort : IBasicSortingAlgorithm
     {
         public int[] SortIncreasing(int[] toSort)
         {
@@ -9,7 +11,7 @@
                 int key = toSort[i];
 
                 int j = i - 1;
-                while(j >= 0 && toSort[j] > key)
+                while (j >= 0 && toSort[j] > key)
                 {
                     toSort[j + 1] = toSort[j];
                     j--;
@@ -22,12 +24,12 @@
 
         public int[] SortDecreasing(int[] toSort)
         {
-            for(int i = toSort.Length - 2; i >= 0; i--)
+            for (int i = toSort.Length - 2; i >= 0; i--)
             {
                 int key = toSort[i];
 
                 int j = i + 1;
-                while(j < toSort.Length && toSort[j] > key)
+                while (j < toSort.Length && toSort[j] > key)
                 {
                     toSort[j - 1] = toSort[j];
                     j++;

@@ -1,4 +1,5 @@
 ﻿using Algorithms.Sorting_Algorithms;
+using Algorithms.Utilities;
 using System;
 
 namespace Algorithms
@@ -9,11 +10,13 @@ namespace Algorithms
         {
             SortingAlgorithms sortingAlgorithms = new SortingAlgorithms();
 
-            var sortedArrInc = sortingAlgorithms.InsertionSort.SortIncreasing(new int[] { 5, 2, 4, 6, 1, 3 });
-            Console.WriteLine("[{0}]", string.Join(", ", sortedArrInc));
+            var testArray = new int[] { 5, 2, 4, 6, 1, 3 };
 
-            var sortedArrDec = sortingAlgorithms.InsertionSort.SortDecreasing(new int[] { 5, 2, 4, 6, 1, 3 });
-            Console.WriteLine("[{0}]", string.Join(", ", sortedArrDec));
+            //var sortedArrInc = sortingAlgorithms.BubbleSort.SortIncreasing((int[])testArray.Clone());
+            var sortedArrDec = sortingAlgorithms.BubbleSort.SortDecreasing((int[])testArray.Clone());
+
+            //Helpers.PrintArray(sortedArrInc);
+            Helpers.PrintArray(sortedArrDec);
 
             Console.ReadKey();
         }
