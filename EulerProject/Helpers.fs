@@ -2,8 +2,9 @@
 
 module Helpers =
     
-    open System.Linq
     open System
+    open System.Linq
+    open System.Collections.Generic
 
     // Returns a fibonacci sequence 
     let rec fibonacci (x : int) =
@@ -46,3 +47,25 @@ module Helpers =
         let length = array |> Seq.filter (fun x -> condition x) |> Seq.length
         // Return the count
         length * 2
+
+    module Collatz =
+
+        // Dictionary containing previous collatz sequences
+        let cache = Dictionary<int64, int64 seq>()
+
+        // Generates a Collatz sequence
+        let collatzSequence (startingNumber : int64) =
+            // Sequence generating condition
+            let nextIteration n = if (n % 2L = 0L) then (n / 2L) else  ((3L * n) + 1L)
+            // Case the starting number is 1
+            if startingNumber = 1L then [ 1L; 4L; 2L; 1L ] |> seq<int64>
+            else Seq.unfold (fun x -> 
+                if (x = 1L) then None
+                else Some(x, nextIteration x)) startingNumber
+
+        // Generates a Collatz sequence recursively
+        let memoizeCollatzSequence (startingNumber : int64) =
+        
+            if cache.ContainsKey(startingNumber) = false then cache.Add(startingNumber, collatzSequence startingNumber)
+
+            cache.[startingNumber]
