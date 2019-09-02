@@ -334,6 +334,18 @@ namespace HackerRank.Problem_Solving.Implementation
             return max;
         }
 
+        public static int[] ClimbingLeaderboard(int[] scores, int[] alice)
+        {
+            return new int[0];
+        }
+
+        public static int HurdleRace(int k, int[] heights)
+        {
+            int doses = heights.Max() - k;
+
+            return doses > 0 ? doses : 0;
+        }
+
         #region Helpers
 
         private static int FindNextMultiple(int grade)
