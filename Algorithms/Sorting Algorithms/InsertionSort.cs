@@ -39,5 +39,27 @@ namespace Algorithms.Sorting_Algorithms
 
             return toSort;
         }
+
+        public int[] FirstDesign(int[] toSort)
+        {
+            for (int i = 0; i < toSort.Length - 1; i++)
+            {
+                int key = toSort[i + 1];
+
+                if (toSort[i] > key)
+                {
+                    int j = i;
+                    while (j >= 0 && toSort[j] > key)
+                    {
+                        int temp = toSort[j];
+                        toSort[j] = key;
+                        toSort[j + 1] = temp;
+                        j--;
+                    }
+                }
+            }
+
+            return toSort;
+        }
     }
 }

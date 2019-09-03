@@ -4,5 +4,6 @@
     {
         int[] SortIncreasing(int[] toSort);
         int[] SortDecreasing(int[] toSort);
+        int[] FirstDesign(int[] toSort);
     }
 }
