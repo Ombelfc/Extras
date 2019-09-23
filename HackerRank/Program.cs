@@ -1,4 +1,5 @@
 ﻿using HackerRank.Problem_Solving.Implementation;
+using System;
 
 namespace HackerRank
 {
@@ -6,7 +7,7 @@ namespace HackerRank
     {
         static void Main(string[] args)
         {
-            
+            Console.ReadKey();
         }
     }
 }

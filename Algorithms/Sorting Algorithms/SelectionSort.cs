@@ -13,5 +13,10 @@ namespace Algorithms.Sorting_Algorithms
         {
             throw new NotImplementedException();
         }
+
+        public int[] FirstDesign(int[] toSort)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

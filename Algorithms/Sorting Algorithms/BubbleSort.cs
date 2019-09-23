@@ -61,5 +61,10 @@ namespace Algorithms.Sorting_Algorithms
 
             return toSort;
         }
+
+        public int[] FirstDesign(int[] toSort)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Algorithms.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -344,6 +345,14 @@ namespace HackerRank.Problem_Solving.Implementation
             int doses = heights.Max() - k;
 
             return doses > 0 ? doses : 0;
+        }
+
+        public static int DesignerPdfViewer(int[] h, string word)
+        {
+            int maxHeight = word.Max(c => h[c - 97]);
+            int wordLength = word.Length;
+
+            return maxHeight * wordLength;
         }
 
         #region Helpers
